@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Latienda</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="registrar_usuario">Registrarse</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+</resources>
