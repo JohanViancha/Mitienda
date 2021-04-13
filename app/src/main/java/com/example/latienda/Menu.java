@@ -18,9 +18,22 @@ public class Menu extends AppCompatActivity {
 
     }
 
+    public void ir_CrerProducto(View view){
+
+        Intent inte = new Intent(this, CrearProducto.class);
+        inte.putExtra("usuario", id_usuario);
+        startActivity(inte);
+    }
+
     public void cerrar_sesion(View view){
         id_usuario=0;
         Intent inte = new Intent(this, MainActivity.class);
+        startActivity(inte);
+    }
+
+    public void ir_VisualizarProducto(View view){
+        Intent inte = new Intent(this, VisualizarProductos.class);
+        inte.putExtra("usuario", id_usuario);
         startActivity(inte);
     }
 }

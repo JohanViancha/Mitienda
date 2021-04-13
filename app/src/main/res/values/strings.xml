@@ -9,8 +9,11 @@
     <string name="apellidos">Ingrese sus apellidos</string>
     <string name="email">Ingrese un email</string>
     <string name="password">Ingrese una contraseña</string>
-    <string name="visualizar_producto">Visualizar Producto</string>
+    <string name="visualizar_producto">Visualizar Productos</string>
     <string name="crear_productos">Crear Productos</string>
     <string name="historial_compras">Historial de compras</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="descripcion_producto">Registrar Producto</string>
+    <string name="valor_producto">Valor Producto</string>
 </resources>
