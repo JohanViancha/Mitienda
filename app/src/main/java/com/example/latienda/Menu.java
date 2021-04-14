@@ -2,9 +2,12 @@ package com.example.latienda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class Menu extends AppCompatActivity {
 
@@ -13,10 +16,8 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
-        id_usuario = getIntent().getIntExtra("usuario",0);
-
     }
+
 
     public void ir_CrerProducto(View view){
 

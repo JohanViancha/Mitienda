@@ -2,7 +2,9 @@ package com.example.latienda;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -40,9 +42,15 @@ public class MainActivity extends AppCompatActivity {
                 Cursor fila = db.rawQuery("select * from usuario where email_usu=\'"+usuario+"\' and password_usu=\'"+password+"\'",null);
                 if(fila.moveToFirst()){
 
+
+                    SharedPreferences sharedpreferences = getSharedPreferences("sesion_usuario", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putInt("id_usuario" , fila.getInt(0));
+                    editor.commit();
+
                     Intent inte = new Intent(this, Menu.class);
-                    inte.putExtra("usuario", fila.getInt(0));
                     startActivity(inte);
+
                 }
                 else{
                     Toast.makeText(this, "Usuario y/o contraseña incorrecta", Toast.LENGTH_SHORT).show();

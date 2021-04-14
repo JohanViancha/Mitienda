@@ -14,8 +14,9 @@
     <string name="historial_compras">Historial de compras</string>
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="btn_registrar">Registrar</string>
-    <string name="descripcion_producto">Registrar Producto</string>
-    <string name="valor_producto">Valor Producto</string>
+    <string name="nombre_producto">Nombre del producto</string>
+    <string name="descripcion_producto">Descripción del producto</string>
+    <string name="valor_producto">Valor del Producto</string>
     <string name="comprar">Comprar</string>
 
 </resources>
