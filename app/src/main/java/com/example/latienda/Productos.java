@@ -10,6 +10,10 @@ public class Productos {
 
     public Productos() {
     }
+    public Productos(String descripcion, double valor) {
+        this.descripcion = descripcion;
+        this.valor = valor;
+    }
 
     public Productos(int idproducto, String descripcion, double valor) {
         this.descripcion = descripcion;

@@ -34,7 +34,13 @@ public class Menu extends AppCompatActivity {
 
     public void ir_VisualizarProducto(View view){
         Intent inte = new Intent(this, VisualizarProductos.class);
-        inte.putExtra("usuario", id_usuario);
         startActivity(inte);
     }
+
+    public void ir_Historial(View view){
+        Intent inte = new Intent(this, HistorialCompras.class);
+        startActivity(inte);
+    }
+
+
 }
