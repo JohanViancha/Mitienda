@@ -6,6 +6,8 @@ public class Productos {
     private String descripcion;
     private double valor;
 
+    public Productos() {
+    }
 
     public Productos(String descripcion, double valor) {
         this.descripcion = descripcion;

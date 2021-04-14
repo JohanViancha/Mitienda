@@ -16,4 +16,6 @@
     <string name="btn_registrar">Registrar</string>
     <string name="descripcion_producto">Registrar Producto</string>
     <string name="valor_producto">Valor Producto</string>
+    <string name="comprar">Comprar</string>
+
 </resources>

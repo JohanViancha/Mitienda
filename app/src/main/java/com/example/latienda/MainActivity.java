@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Por favor ingrese su usuario y contraseña", Toast.LENGTH_SHORT).show();
             }
 
-            db.close();
         }catch (Exception ex){
 
             Toast.makeText(this, ex.getMessage(), Toast.LENGTH_SHORT).show();

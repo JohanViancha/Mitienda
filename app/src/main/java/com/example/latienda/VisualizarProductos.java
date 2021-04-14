@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,48 +17,62 @@ import java.util.List;
 
 public class VisualizarProductos extends AppCompatActivity {
     private int id_usuario =0;
-    List<Productos> productos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visualizar_productos);
 
-        productos = new ArrayList<>();
-
-        productos.add(new Productos("Producto 1", 4000));
-        productos.add(new Productos("Producto 2", 4000));
-        productos.add(new Productos("Producto 3", 2000));
-
-        ListaProductos adapter = new ListaProductos(productos,this);
-
-        RecyclerView recycler = findViewById(R.id.recyclerView);
-        recycler.setHasFixedSize(true);
-        recycler.setLayoutManager(new LinearLayoutManager(this));
-        recycler.setAdapter(adapter);
-
-
         id_usuario = getIntent().getIntExtra("usuario",0);
 
-        listar_productos();
+        listar_productos(id_usuario);
     }
 
 
 
-    public void listar_productos(){
+    public void listar_productos(int id_usuario){
 
+        List<Productos> Listproducto = new ArrayList<Productos>();
         try{
 
             Administracion_BD admin = new Administracion_BD(this, "tienda", null, 1);
             SQLiteDatabase db = admin.getWritableDatabase();
 
-            System.out.println("Id usuario "+ id_usuario);
             Cursor fila = db.rawQuery("select * from producto where id_usuario=\'"+id_usuario+"\'",null);
-            if(fila.moveToFirst()){
-                Toast.makeText(this, "Si existe productos", Toast.LENGTH_SHORT).show();
+
+            if(fila.getCount() != 0){
+                while (fila.moveToNext()){
+                    Productos prod = new Productos();
+
+                    prod.setDescripcion(fila.getString(1));
+                    prod.setValor(fila.getDouble(2));
+
+                    Listproducto.add(prod);
+                }
+
+                ListaProductos adapter = new ListaProductos(Listproducto,this);
+
+                RecyclerView recycler = findViewById(R.id.recyclerView);
+                recycler.setHasFixedSize(true);
+                recycler.setLayoutManager(new LinearLayoutManager(this));
+                recycler.setAdapter(adapter);
+
+                Intent inte = new Intent(this, DetalleProducto.class);
+                adapter.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+
+                        inte.putExtra("descripcion",Listproducto.get(recycler.getChildAdapterPosition(v)).getDescripcion());
+                        inte.putExtra("valor",Listproducto.get(recycler.getChildAdapterPosition(v)).getValor());
+                        startActivity(inte);
+                    }
+                });
+
+
             }
             else{
                 Toast.makeText(this, "No existe productos", Toast.LENGTH_SHORT).show();
-
             }
             db.close();
 

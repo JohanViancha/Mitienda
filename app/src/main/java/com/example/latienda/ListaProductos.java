@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 import java.util.zip.Inflater;
 
-public class ListaProductos extends RecyclerView.Adapter<ListaProductos.ViewHolder> {
+public class ListaProductos extends RecyclerView.Adapter<ListaProductos.ViewHolder>
+        implements View.OnClickListener {
 
     private List<Productos> productos;
     private LayoutInflater inflater;
     private Context context;
+    private View.OnClickListener listener;
 
     public ListaProductos(List<Productos> productos, Context context) {
         this.inflater = LayoutInflater.from(context);
@@ -30,7 +32,7 @@ public class ListaProductos extends RecyclerView.Adapter<ListaProductos.ViewHold
     @Override
     public ListaProductos.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.list_productos,null);
-
+        view.setOnClickListener(this);
         return new ListaProductos.ViewHolder(view);
     }
 
@@ -43,6 +45,19 @@ public class ListaProductos extends RecyclerView.Adapter<ListaProductos.ViewHold
     public int getItemCount() {
         return productos.size();
     }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener = listener;
+
+    }
+    @Override
+    public void onClick(View v) {
+
+        if(listener !=  null){
+            listener.onClick(v);
+        }
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
