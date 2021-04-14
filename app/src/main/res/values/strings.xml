@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Latienda</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="registrar_usuario">Registrarse</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="registro">Registro Usuario</string>
+    <string name="nombre">Ingrese sus nombres</string>
+    <string name="apellidos">Ingrese sus apellidos</string>
+    <string name="email">Ingrese un email</string>
+    <string name="password">Ingrese una contraseña</string>
+    <string name="visualizar_producto">Visualizar Productos</string>
+    <string name="crear_productos">Crear Productos</string>
+    <string name="historial_compras">Historial de compras</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
+    <string name="btn_registrar">Registrar</string>
+    <string name="nombre_producto">Nombre del producto</string>
+    <string name="descripcion_producto">Descripción del producto</string>
+    <string name="valor_producto">Valor del Producto</string>
+    <string name="comprar">Comprar</string>
+
+
+</resources>
