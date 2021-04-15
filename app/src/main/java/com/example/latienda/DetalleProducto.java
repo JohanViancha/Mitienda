@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +21,7 @@ import java.util.Date;
 public class DetalleProducto extends AppCompatActivity {
 
     private TextView descripcion, valor, nombre;
+    private ImageView imagen;
     private int id_producto = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +31,15 @@ public class DetalleProducto extends AppCompatActivity {
         nombre = findViewById(R.id.tvnombre);
         descripcion = findViewById(R.id.tvdescripcion);
         valor = findViewById(R.id.tvvalor);
+        imagen = findViewById(R.id.imvdetalle);
 
         id_producto = getIntent().getIntExtra("id_producto",0);
         nombre.setText(getIntent().getStringExtra("nombre"));
         descripcion.setText(getIntent().getStringExtra("descripcion"));
         valor.setText(String.valueOf(getIntent().getDoubleExtra("valor",0)));
+        byte[] byteArray = getIntent().getByteArrayExtra("imagen");
+        Bitmap img = (Bitmap) BitmapFactory.decodeByteArray(byteArray, 0 ,byteArray.length);
+        imagen.setImageBitmap(img);
     }
 
     public void hacerCompra(View view) {

@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SimpleTimeZone;
@@ -55,10 +56,6 @@ public class VisualizarProductos extends AppCompatActivity {
                     prod.setValor(fila.getDouble(3));
                     byte[] byteArray = fila.getBlob(5);
                     Bitmap img = (Bitmap) BitmapFactory.decodeByteArray(byteArray, 0 ,byteArray.length);
-                    System.out.println(byteArray);
-                    System.out.println(byteArray.length);
-                    System.out.println(img);
-
                     prod.setImagen(img);
 
                     Listproducto.add(prod);
@@ -81,6 +78,19 @@ public class VisualizarProductos extends AppCompatActivity {
                         inte.putExtra("nombre",Listproducto.get(recycler.getChildAdapterPosition(v)).getNombre());
                         inte.putExtra("descripcion",Listproducto.get(recycler.getChildAdapterPosition(v)).getDescripcion());
                         inte.putExtra("valor",Listproducto.get(recycler.getChildAdapterPosition(v)).getValor());
+
+                        try {
+                            byte[] imagebit;
+                            Bitmap imageBitmap = Listproducto.get(recycler.getChildAdapterPosition(v)).getImagen();
+                            ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
+                            imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100 , baos);
+                            imagebit = baos.toByteArray();
+                            baos.close();
+                            inte.putExtra("imagen",imagebit);
+                        }catch (Exception ex){
+                            System.out.println(ex.getMessage());
+                        }
+
                         startActivity(inte);
                     }
                 });
