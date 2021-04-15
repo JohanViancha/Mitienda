@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListAdapter;
@@ -16,6 +18,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.SimpleTimeZone;
 
 public class VisualizarProductos extends AppCompatActivity {
 
@@ -50,7 +53,13 @@ public class VisualizarProductos extends AppCompatActivity {
                     prod.setNombre(fila.getString(1));
                     prod.setDescripcion(fila.getString(2));
                     prod.setValor(fila.getDouble(3));
-                   // prod.setImagen(fila.getBlob(5));
+                    byte[] byteArray = fila.getBlob(5);
+                    Bitmap img = (Bitmap) BitmapFactory.decodeByteArray(byteArray, 0 ,byteArray.length);
+                    System.out.println(byteArray);
+                    System.out.println(byteArray.length);
+                    System.out.println(img);
+
+                    prod.setImagen(img);
 
                     Listproducto.add(prod);
                 }

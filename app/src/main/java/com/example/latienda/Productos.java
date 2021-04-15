@@ -1,12 +1,14 @@
 package com.example.latienda;
 
+import android.graphics.Bitmap;
+
 public class Productos {
 
     private int idproducto;
     private String nombre;
     private String descripcion;
     private double valor;
-    private String imagen;
+    private Bitmap imagen;
 
 
     public Productos() {
@@ -16,7 +18,7 @@ public class Productos {
         this.valor = valor;
     }
 
-    public Productos(int idproducto, String descripcion, double valor, String imagen) {
+    public Productos(int idproducto, String descripcion, double valor, Bitmap imagen) {
         this.descripcion = descripcion;
         this.valor = valor;
         this.imagen = imagen;
@@ -45,11 +47,11 @@ public class Productos {
     public String getNombre() {return nombre; }
 
     public void setNombre(String nombre) {this.nombre = nombre;}
-    public String getImagen() {
+    public Bitmap getImagen() {
         return imagen;
     }
 
-    public void setImagen(String imagen) {
+    public void setImagen(Bitmap imagen) {
         this.imagen = imagen;
     }
 }

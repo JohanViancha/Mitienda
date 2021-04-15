@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,6 +36,7 @@ public class CrearProducto extends AppCompatActivity {
     private EditText descripcion, valor, nombre;
     private ImageView imageview;
     private Bitmap imageBitmap;
+    private byte[] imagebit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +71,7 @@ public class CrearProducto extends AppCompatActivity {
                 producto.put("descripcion_pro", descripcion);
                 producto.put("valor_pro", valor);
                 producto.put("id_usuario", id_usuario);
-                producto.put("imagen_pro", String.valueOf(imageBitmap));
+                producto.put("imagen_pro",imagebit);
                 db.insert("producto", null, producto);
                 db.close();
                 Toast.makeText(this, "Se ha creado exitosamente el producto", Toast.LENGTH_LONG).show();
@@ -126,9 +128,10 @@ public class CrearProducto extends AppCompatActivity {
             imageview.setImageBitmap(imageBitmap);
 
            try {
-                FileOutputStream fos = openFileOutput(createImageFile(), Context.MODE_PRIVATE);
-                imageBitmap.compress(Bitmap.CompressFormat.JPEG,100,fos);
-                fos.close();
+               ByteArrayOutputStream baos = new ByteArrayOutputStream(20480);
+               imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100 , baos);
+               imagebit = baos.toByteArray();
+               baos.close();
             }catch (Exception ex){
 
             }

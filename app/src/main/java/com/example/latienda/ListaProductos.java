@@ -1,6 +1,8 @@
 package com.example.latienda;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +78,7 @@ public class ListaProductos extends RecyclerView.Adapter<ListaProductos.ViewHold
         public void pintarDatos(final Productos list_productos){
             descripcion.setText(list_productos.getDescripcion());
             valor.setText(String.valueOf(list_productos.getValor()));
-            imagen.setImageBitmap(Byte.parseByte(list_productos.getImagen());
+            imagen.setImageBitmap(list_productos.getImagen());
         }
     }
 }
