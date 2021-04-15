@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">Latienda</string>
-<<<<<<< HEAD
     <string name="iniciar_sesion">Inicia Sesión</string>
-=======
-    <string name="iniciar_sesion">Iniciar Sesión</string>
->>>>>>> c8440beed7f06c572d008225fbea5eaff3b28a40
     <string name="registrar_usuario">Registrarse</string>
     <string name="usuario">Usuario</string>
     <string name="contraseña">Contraseña</string>
