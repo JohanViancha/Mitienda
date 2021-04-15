@@ -19,6 +19,7 @@ public class Administracion_BD extends SQLiteOpenHelper {
                 "descripcion_pro text, " +
                 "valor_pro money, " +
                 "id_usuario integer, " +
+                "imagen_pro blob, " +
                 "foreign key (id_usuario) references usuario (id_usuario))");
 
         db.execSQL("create table usuario (" +

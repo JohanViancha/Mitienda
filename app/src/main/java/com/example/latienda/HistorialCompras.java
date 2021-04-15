@@ -45,9 +45,7 @@ public class HistorialCompras extends AppCompatActivity {
                 while (fila.moveToNext()){
                     Compras comp = new Compras();
                     comp.setFecha(fila.getString(1));
-                  //  comp.setProducto(new Productos(fila.getString(5), fila.getDouble(6)));
-
-
+                    comp.setProducto(new Productos(fila.getString(5), fila.getDouble(6)));
                     Listcompras.add(comp);
                 }
 
@@ -57,8 +55,6 @@ public class HistorialCompras extends AppCompatActivity {
                 recycler.setHasFixedSize(true);
                 recycler.setLayoutManager(new LinearLayoutManager(this));
                 recycler.setAdapter(adapter);
-                Toast.makeText(this, "Si existe compras", Toast.LENGTH_SHORT).show();
-
             }
             else{
                 Toast.makeText(this, "No existe compras", Toast.LENGTH_SHORT).show();

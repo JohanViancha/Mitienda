@@ -38,7 +38,7 @@ public class ListAdapterHistorial extends RecyclerView.Adapter<ListAdapterHistor
 
     @Override
     public int getItemCount() {
-        return 0;
+        return compras.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -47,16 +47,15 @@ public class ListAdapterHistorial extends RecyclerView.Adapter<ListAdapterHistor
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-
             fecha = itemView.findViewById(R.id.tvfecha_com);
-           /* descripcion = itemView.findViewById(R.id.tvdescripcion_com);
-            valor = itemView.findViewById(R.id.tvvalor_com);*/
+           descripcion = itemView.findViewById(R.id.tvdescripcion_com);
+            valor = itemView.findViewById(R.id.tvvalor_com);
         }
 
         public void pintarDatos(final Compras list_compras){
             fecha.setText(list_compras.getFecha());
-          /*  descripcion.setText(list_compras.getProducto().getDescripcion());
-            valor.setText(String.valueOf(list_compras.getProducto().getValor()));*/
+            descripcion.setText(list_compras.getProducto().getDescripcion());
+            valor.setText("$ " + String.valueOf(list_compras.getProducto().getValor()));
         }
     }
 }

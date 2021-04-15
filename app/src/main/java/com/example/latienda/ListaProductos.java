@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -62,17 +63,20 @@ public class ListaProductos extends RecyclerView.Adapter<ListaProductos.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         private TextView descripcion, valor;
+        private ImageView imagen;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             descripcion = itemView.findViewById(R.id.txtdescripcion);
             valor = itemView.findViewById(R.id.txtvalor);
+            imagen = itemView.findViewById(R.id.ivimagen_pro);
         }
 
         public void pintarDatos(final Productos list_productos){
             descripcion.setText(list_productos.getDescripcion());
             valor.setText(String.valueOf(list_productos.getValor()));
+            imagen.setImageBitmap(Byte.parseByte(list_productos.getImagen());
         }
     }
 }

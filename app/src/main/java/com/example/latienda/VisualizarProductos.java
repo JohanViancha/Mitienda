@@ -50,6 +50,7 @@ public class VisualizarProductos extends AppCompatActivity {
                     prod.setNombre(fila.getString(1));
                     prod.setDescripcion(fila.getString(2));
                     prod.setValor(fila.getDouble(3));
+                   // prod.setImagen(fila.getBlob(5));
 
                     Listproducto.add(prod);
                 }

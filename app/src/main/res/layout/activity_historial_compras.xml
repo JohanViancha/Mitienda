@@ -10,14 +10,20 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/historial_compras"
-        tools:layout_editor_absoluteX="139dp"
-        tools:layout_editor_absoluteY="28dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_historial"
-        android:layout_width="396dp"
-        android:layout_height="629dp"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="85dp" />
+        android:layout_width="398dp"
+        android:layout_height="653dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -55,10 +55,11 @@ public class RegistarUsuario extends AppCompatActivity {
                 db.close();
                 Toast.makeText(this, "El usuario ha sido registrado", Toast.LENGTH_LONG).show();
 
-                limpiarFormulario();
+
 
                 Intent inte = new Intent(this, MainActivity.class);
                 startActivity(inte);
+                limpiarFormulario();
             }catch (Exception ex){
 
                 Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
