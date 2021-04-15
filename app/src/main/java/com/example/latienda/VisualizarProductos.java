@@ -13,13 +13,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListAdapter;
 import android.widget.Toast;
+
+import com.example.latienda.ListAdapter.ListaProductos;
+import com.example.latienda.modelos.Productos;
 
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SimpleTimeZone;
 
 public class VisualizarProductos extends AppCompatActivity {
 

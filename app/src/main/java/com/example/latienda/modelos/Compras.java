@@ -1,4 +1,4 @@
-package com.example.latienda;
+package com.example.latienda.modelos;
 
 public class Compras {
 

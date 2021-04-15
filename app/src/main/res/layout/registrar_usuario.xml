@@ -12,15 +12,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:text="@string/registro"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtnombres_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="365dp"
+        android:layout_height="59dp"
         android:layout_marginTop="60dp"
         android:autofillHints="@string/nombre"
         android:ems="10"
@@ -32,8 +33,8 @@
 
     <EditText
         android:id="@+id/txtapellidos_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="62dp"
         android:layout_marginTop="56dp"
         android:autofillHints="@string/apellidos"
         android:ems="10"
@@ -46,29 +47,29 @@
 
     <EditText
         android:id="@+id/txtemail_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_width="361dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="60dp"
         android:autofillHints="@string/email"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtapellidos_reg" />
 
     <EditText
         android:id="@+id/txtcontraseña_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_width="365dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="52dp"
         android:autofillHints="@string/password"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtemail_reg" />
 
@@ -76,10 +77,13 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="72dp"
+        android:background="#4CAF50"
         android:onClick="registra_usuario"
-        android:text="@string/registrar_usuario"
+        android:text="@string/btn_registrar"
+        app:backgroundTint="#4CAF50"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtcontraseña_reg" />
 </androidx.constraintlayout.widget.ConstraintLayout>

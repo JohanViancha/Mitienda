@@ -5,13 +5,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
+
+import com.example.latienda.ListAdapter.ListAdapterHistorial;
+import com.example.latienda.modelos.Compras;
+import com.example.latienda.modelos.Productos;
 
 import java.util.ArrayList;
 import java.util.List;

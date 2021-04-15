@@ -1,4 +1,4 @@
-package com.example.latienda;
+package com.example.latienda.modelos;
 
 import android.graphics.Bitmap;
 

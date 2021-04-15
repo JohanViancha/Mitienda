@@ -15,6 +15,7 @@
 
         android:layout_width="385dp"
         android:layout_height="129dp"
+        android:background="#4CAF50"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -30,36 +31,31 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Fecha"
-                android:textSize="15dp">
+                android:textColor="#FFF"
+                android:textSize="18sp">
 
             </TextView>
 
-            <ImageView
-                android:layout_width="74dp"
-                android:layout_height="58dp"
-                android:layout_marginTop="6dp"
-                android:layout_marginLeft="230dp"
-                >
-
-            </ImageView>
             <TextView
                 android:id="@+id/tvdescripcion_com"
                 android:layout_width="177dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="55dp"
                 android:text="Descripción"
-                android:textSize="15dp"></TextView>
+                android:textColor="#FFF"
+                android:textSize="18dp"></TextView>
 
             <TextView
                 android:id="@+id/tvvalor_com"
                 android:layout_width="177dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="190dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="25dp"
                 android:gravity="center"
                 android:text="Precio"
-                android:textSize="15dp"></TextView>
+                android:textColor="#FFFFFF"
+                android:textSize="25sp"></TextView>
         </RelativeLayout>
 
     </LinearLayout>

@@ -1,21 +1,19 @@
-package com.example.latienda;
+package com.example.latienda.ListAdapter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.latienda.R;
+import com.example.latienda.modelos.Productos;
+
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class ListaProductos extends RecyclerView.Adapter<ListaProductos.ViewHolder>
         implements View.OnClickListener {

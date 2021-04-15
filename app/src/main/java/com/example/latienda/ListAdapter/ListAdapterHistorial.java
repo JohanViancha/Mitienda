@@ -1,4 +1,4 @@
-package com.example.latienda;
+package com.example.latienda.ListAdapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,7 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.latienda.Compras;
+import com.example.latienda.R;
+import com.example.latienda.modelos.Compras;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 

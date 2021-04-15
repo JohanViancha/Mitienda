@@ -60,9 +60,17 @@ public class CrearProducto extends AppCompatActivity {
     public void registrar_producto(View view){
         String nombre =this.nombre.getText().toString();
         String descripcion = this.descripcion.getText().toString();
-        double valor =(Double) Double.parseDouble(this.valor.getText().toString());
+        double valor = 0;
+        if(!(this.valor.getText().toString()).isEmpty()){
+            valor =(Double) Double.parseDouble(this.valor.getText().toString());
+        }
 
-        if(!descripcion.isEmpty() && valor!=0){
+        if(!descripcion.isEmpty() && valor!=0 && imagebit != null){
+
+            System.out.println(descripcion);
+            System.out.println(valor);
+            System.out.println(imagebit);
+
             try {
                 Administracion_BD admin = new Administracion_BD(this, "tienda", null, 1);
                 SQLiteDatabase db = admin.getWritableDatabase();
@@ -85,6 +93,9 @@ public class CrearProducto extends AppCompatActivity {
                 Toast.makeText(this, ex.toString(), Toast.LENGTH_SHORT).show();
             }
 
+
+        }else{
+            Toast.makeText(this, "Por favor ingrese todos los datos del producto", Toast.LENGTH_LONG).show();
 
         }
 
